@@ -1,0 +1,12 @@
+
+def soma_digitos(numero):
+    return sum(int(digito) for digito in str(numero))
+
+entrada = input("Digite um número: ")
+
+if entrada.isdigit():
+    numero = int(entrada)
+    resultado = soma_digitos(numero)
+    print(f"A soma dos dígitos do número {numero} é: {resultado}")
+else:
+    print("Por favor, digite um número inteiro válido.")

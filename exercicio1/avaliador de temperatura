@@ -1,0 +1,32 @@
+def calcular_temperaturas():
+    def validar_numero(valor):
+        try:
+            return float(valor)
+        except ValueError:
+            return None
+
+    temp_max = input("Digite a temperatura máxima (em ºC): ")
+    temp_min = input("Digite a temperatura mínima (em ºC): ")
+
+    temp_max = validar_numero(temp_max)
+    temp_min = validar_numero(temp_min)
+
+    if temp_max is None or temp_min is None:
+        print("Erro: Ambos os valores precisam ser números válidos (inteiros ou decimais).")
+        return
+
+    media = (temp_max + temp_min) / 2
+    variacao = temp_max - temp_min
+
+    print(f"A média entre a temperatura máxima e mínima é: {media:.2f} ºC")
+    print(f"A variação entre as temperaturas é: {variacao:.2f} ºC")
+
+    numero = input("Digite um número para calcular a soma dos dígitos: ")
+
+    if not numero.isdigit():
+        print("Erro: O valor informado não é um número inteiro válido.")
+    else:
+        soma_digitos = sum(int(digito) for digito in numero)
+        print(f"A soma dos dígitos do número {numero} é: {soma_digitos}")
+
+calcular_temperaturas()
